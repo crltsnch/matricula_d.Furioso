@@ -147,7 +147,7 @@ style="width:320px;height:4px;border-width:0px;background-color:rgb(253,120,50);
 soup = BeautifulSoup(html, 'html.parser')
 
 # Buscar la sección de texto que contiene la información de la matrícula
-text_section = soup.find('div' , text=re.compile(r"Matricula: ?[A-Z0-9-]+"))
+text_section = soup.find('div' , string=re.compile(r"Matricula: ?[A-Z0-9-]+"))
 
 # Utilizar expresiones regulares para extraer la matrícula
 matricula_match = re.search(r"Matricula: ?([^\n]+)", text_section.get_text())
